@@ -1,4 +1,4 @@
-
+---
 
 
 interface Props {
@@ -7,4 +7,29 @@ interface Props {
 	description?: string;
 }
 
-const { title, } 
+const { title, lang, description = "Web informativa coorporativa" } = Astro.props;
+
+---
+
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<title>{title}</title>
+	</head>
+	<body class="bg-white text-gray-900 antialiased">
+		<main>
+			<slot /> </main>
+		</body>
+</html>
+
+
+<style is:global>
+	html {
+		scroll-behavior: smooth;
+	}
+</style>

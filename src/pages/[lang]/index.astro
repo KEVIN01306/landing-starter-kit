@@ -1,0 +1,34 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'es' } },
+    { params: { lang: 'en' } },
+  ];
+}
+
+
+const { lang } = Astro.params;
+
+const textos = {
+	es: { titulo: "Bienvenido", desc: "Esta es una marca de la empresa." },
+	en: { titulo: "Welcome", desc: "This is a company brand." }
+};
+
+const t = textos[lang as keyof typeof textos];
+---
+<Layout title={t.titulo} lang={lang}>
+	<section class="h-screen flex flex-col justify-center items-center text-center p-5">
+		<h1 class="text-6xl font-bold text-blue-600 mb-4">
+			{t.titulo}
+		</h1>
+		<p class="text-xl text-gray-600">
+			{t.desc}
+		</p>
+		<div class="mt-8 flex gap-4">
+			<a href="/es" class="px-4 py-2 bg-gray-200 rounded">Español</a>
+			<a href="/en" class="px-4 py-2 bg-gray-200 rounded">English</a>
+		</div>
+	</section>
+</Layout>
