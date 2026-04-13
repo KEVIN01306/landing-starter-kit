@@ -1,0 +1,36 @@
+---
+// src/components/Hero.astro
+interface Props {
+  title: string;
+  subtitle: string;
+  buttonUrl: string;
+  lang: string;
+}
+
+const { title, subtitle, buttonUrl, lang } = Astro.props;
+
+const btnText = lang === "es" ? "Saber más" : "Learn More";
+---
+
+<section class="relative bg-slate-900 py-24 px-6 text-center">
+  <div class="max-w-4xl mx-auto">
+    <h1
+      class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight"
+    >
+      <span
+        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400"
+      >
+        {title}
+      </span>
+    </h1>
+    <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
+      {subtitle}
+    </p>
+    <a
+      href={buttonUrl}
+      class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-full transition-all transform hover:scale-105"
+    >
+      {btnText}
+    </a>
+  </div>
+</section>

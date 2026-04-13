@@ -1,0 +1,16 @@
+{
+  "es": {
+    "brandName": "Marca Pro",
+    "heroTitle": "Soluciones Innovadoras",
+    "heroSubtitle": "Expertos en tecnología para tu empresa.",
+    "about": "Somos una empresa líder con 20 años de experiencia.",
+    "ctaUrl": "https://pago-externo.com/comprar-es"
+  },
+  "en": {
+    "brandName": "Pro Brand",
+    "heroTitle": "Innovative Solutions",
+    "heroSubtitle": "Experts in technology for your business.",
+    "about": "We are a leading company with 20 years of experience.",
+    "ctaUrl": "https://external-payment.com/buy-en"
+  }
+}
