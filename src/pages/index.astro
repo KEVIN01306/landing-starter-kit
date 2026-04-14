@@ -1,11 +1,26 @@
 ---
-
-const  acceptLang = Astro.request.headers.get('accept-language');
-
-
-if ( acceptLang?.includes('en')){
-    return Astro.redirect('/en');
-}else {
-    return Astro.redirect('/es');
-}
+// src/pages/index.astro
+// No renderizamos nada de HTML aquí para que sea ultra rápido
 ---
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Redirecting...</title>
+    <meta http-equiv="refresh" content="0;url=/es" />
+    
+    <script is:inline>
+      // 2. Lógica inteligente: Detectar idioma del navegador
+      const userLang = navigator.language || navigator.userLanguage;
+      
+      // Si el idioma empieza por 'en' (en-US, en-GB, etc), mandamos a /en
+      if (userLang.startsWith('en')) {
+        window.location.pathname = '/en';
+      } else {
+        // Por defecto para el resto del mundo: /es
+        window.location.pathname = '/es';
+      }
+    </script>
+  </head>
+  <body style="background: white;">
+    </body>
+</html>

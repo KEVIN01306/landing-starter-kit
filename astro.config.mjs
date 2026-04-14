@@ -14,7 +14,4 @@ export default defineConfig({
   },
 
   adapter: cloudflare(),
-  redirects: {
-    '/': '/es'
-  }
 });
