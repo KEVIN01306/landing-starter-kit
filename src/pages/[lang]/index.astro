@@ -2,40 +2,31 @@
 import Layout from '../../layouts/Layout.astro';
 import Hero from '../../components/Hero.astro';
 import content from '../../data/site-content.json';
+import Navbar from '../../components/Navbar.astro';
+import type { Lang } from '../../i18n/config.i18n';
 
-export function getStaticPaths() {
-  return [
-    { params: { lang: 'es' } },
-    { params: { lang: 'en' } },
-  ];
+
+const lang = Astro.params.lang as Lang;
+
+
+const data = content[lang];
+
+if (!(lang in content)) {
+	return Astro.redirect('/404');
 }
-
-
-const { lang } = Astro.params;
-
-const textos = {
-	es: { titulo: "Bienvenido", desc: "Esta es una marca de la empresa." },
-	en: { titulo: "Welcome", desc: "This is a company brand." }
-};
-
-
-const data = content[lang as keyof typeof content];
-
 ---
 <Layout title={data.brandName} lang={lang}>
+	<Navbar lang={lang} />
 	<Hero 
 		title={data.heroTitle} 
 		subtitle={data.heroSubtitle} 
 		buttonUrl={data.ctaUrl}
 		lang={lang}
-  	/>
-	<section class="py-20 px-6 max-w-4xl mx-auto text-center">
+	/>
+	<section id="about" class="py-20 px-6 max-w-4xl mx-auto text-center">
 		<h2 class="text-3xl font-bold mb-6">{lang === 'es' ? 'Nosotros' : 'About Us'}</h2>
 		<p class="text-gray-600 leading-relaxed text-lg">
 		{data.about}
 		</p>
-
-		<a href="/es">Español</a>
-		<a href="/en">Ingles</a>
 	</section>
 </Layout>

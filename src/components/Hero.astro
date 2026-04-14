@@ -1,10 +1,10 @@
 ---
-// src/components/Hero.astro
+import type { Lang } from '../i18n/config.i18n';
 interface Props {
   title: string;
   subtitle: string;
   buttonUrl: string;
-  lang: string;
+  lang: Lang;
 }
 
 const { title, subtitle, buttonUrl, lang } = Astro.props;
