@@ -13,5 +13,14 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
-  adapter: cloudflare()
+  adapter: cloudflare(),
+  output: 'server',
+  i18n: {
+    defaultLocale: 'es',
+    locales: ['es','en'],
+    routing: {
+      prefixDefaultLocale: true,
+      fallbackType: 'redirect'
+    }
+  }
 });
