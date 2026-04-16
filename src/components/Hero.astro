@@ -1,15 +1,11 @@
 ---
 import type { Lang } from '../i18n/config.i18n';
-interface Props {
-  title: string;
-  subtitle: string;
-  buttonUrl: string;
-  lang: Lang;
-}
+import { getLangFromUrl } from '../i18n/utils.i18n';
+import content from '../data/site-content.json'
 
-const { title, subtitle, buttonUrl, lang } = Astro.props;
+const lang = getLangFromUrl(Astro.url)
 
-const btnText = lang === "es" ? "Saber más" : "Learn More";
+const { hero } = content[lang]
 ---
 
 <section class="relative bg-slate-900 py-24 px-6 text-center">
@@ -20,17 +16,11 @@ const btnText = lang === "es" ? "Saber más" : "Learn More";
       <span
         class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400"
       >
-        {title}
+        {hero.title}
       </span>
     </h1>
     <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
-      {subtitle}
+      {hero.subTitle}
     </p>
-    <a
-      href={buttonUrl}
-      class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-full transition-all transform hover:scale-105"
-    >
-      {btnText}
-    </a>
   </div>
 </section>

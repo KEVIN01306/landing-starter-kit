@@ -2,8 +2,6 @@
 import Layout from '../../layouts/Layout.astro';
 import Hero from '../../components/Hero.astro';
 import content from '../../data/site-content.json';
-import Navbar from '../../components/Navbar.astro';
-import Footer from '../../components/Footer.astro';
 import type { Lang } from '../../i18n/config.i18n';
 
 
@@ -18,15 +16,12 @@ if (!(lang in content)) {
 ---
 <Layout title={data.brandName} lang={lang}>
 	<Hero 
-		title={data.heroTitle} 
-		subtitle={data.heroSubtitle} 
-		buttonUrl={data.ctaUrl}
-		lang={lang}
+		
 	/>
 	<section id="about" class="py-20 px-6 max-w-4xl mx-auto text-center">
 		<h2 class="text-3xl font-bold mb-6">{lang === 'es' ? 'Nosotros' : 'About Us'}</h2>
 		<p class="text-gray-600 leading-relaxed text-lg">
-		{data.about}
+		{data.about.title}
 		</p>
 	</section>
 </Layout>

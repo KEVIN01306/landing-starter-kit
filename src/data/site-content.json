@@ -1,16 +1,24 @@
 {
   "es": {
-    "brandName": "Marca Pro",
-    "heroTitle": "Soluciones Innovadoras",
-    "heroSubtitle": "Expertos en tecnología para tu empresa.",
-    "about": "Somos una empresa líder con 20 años de experiencia.",
+    "brandName": "REAL SPING - INICIO ",
+    "hero": {
+          "title" : "Soluciones Innovadoras",
+          "subTitle": "Expertos en tecnología para tu empresa."
+    },
+    "about": {
+          "title": "Somos una empresa líder con 20 años de experiencia."
+    },
     "ctaUrl": "https://pago-externo.com/comprar-es"
   },
   "en": {
-    "brandName": "Pro Brand",
-    "heroTitle": "Innovative Solutions",
-    "heroSubtitle": "Experts in technology for your business.",
-    "about": "We are a leading company with 20 years of experience.",
+    "brandName": "REAL SPING - HOME ",
+    "hero": {
+          "title" : "Innovative Solutions",
+          "subTitle": "Experts in technology for your business."
+    },
+    "about": {
+          "title": "We are a leading company with 20 years of experience."
+    },
     "ctaUrl": "https://external-payment.com/buy-en"
   }
 }

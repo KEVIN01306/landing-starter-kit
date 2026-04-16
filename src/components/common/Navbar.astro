@@ -1,13 +1,11 @@
 ---
-import type { Lang } from "../i18n/config.i18n";
-import { ui } from "../i18n/ui.i18n";
+import type { Lang } from '../../i18n/config.i18n';
+import { ui } from "../../i18n/ui.i18n";
+import { getLangFromUrl, useTranslations } from '../../i18n/utils.i18n';
 
-interface Props {
-  lang: Lang;
-}
+const lang = getLangFromUrl(Astro.url);
 
-const { lang } = Astro.props;
-const t = ui[lang];
+const t = useTranslations(lang);
 
 const currentPath = Astro.url.pathname;
 const switchLangPath =
