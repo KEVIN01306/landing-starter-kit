@@ -1,0 +1,18 @@
+---
+
+import type { Lang } from "../i18n/config.i18n";
+import { ui } from "../i18n/ui.i18n";
+
+
+interface Props {
+    lang: Lang
+}
+
+const { lang } = Astro.props;
+
+const t = ui[lang]
+---
+
+<footer class="w-full flex justify-center">
+    {t['footer.rights']}
+</footer>

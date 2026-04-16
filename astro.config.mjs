@@ -21,7 +21,8 @@ export default defineConfig({
     locales: Object.keys(LANGUAGES),
     routing: {
       prefixDefaultLocale: true,
-      fallbackType: 'redirect'
+      fallbackType: 'redirect',
+      redirectToDefaultLocale: true,
     }
   }
 });
