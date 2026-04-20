@@ -8,12 +8,13 @@ import { LANGUAGES } from './src/i18n/config.i18n';
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'server',
 
-  site: 'https://kerrinfull.cloud',
   vite: {
     plugins: [tailwindcss()]
   },
+  output: 'server',
+
+  site: 'https://kerrinfull.cloud',
 
   adapter: cloudflare(),
   i18n: {

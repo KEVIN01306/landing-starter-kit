@@ -1,14 +1,15 @@
 ---
-
 import { ui } from "../../i18n/ui.i18n";
-import { getLangFromUrl, useTranslations,  } from '../../i18n/utils.i18n';
-
+import { getLangFromUrl, useTranslations } from '../../i18n/utils.i18n';
 
 const lang = getLangFromUrl(Astro.url);
-
-const t = useTranslations(lang)
+const t = useTranslations(lang);
 ---
 
-<footer class="w-full flex justify-center">
-    {t['footer.rights']}
+<footer class="w-full border-t border-gray-100 bg-white py-8 px-6 mt-10">
+  <div class="max-w-7xl mx-auto flex flex-col items-center justify-center">
+    <p class="text-sm font-medium text-gray-500 text-center">
+      {t.footer.rights}
+    </p>
+  </div>
 </footer>

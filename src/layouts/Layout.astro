@@ -2,6 +2,7 @@
 import type { Lang } from '../i18n/config.i18n';
 import Navbar from '../components/common/Navbar.astro';
 import Footer from '../components/common/Footer.astro';
+import '../styles/global.css';
 
 
 interface Props {
@@ -19,7 +20,7 @@ const { title, lang, description = "Web informativa coorporativa" } = Astro.prop
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/icon.png" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
 
